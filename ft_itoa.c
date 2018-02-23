@@ -1,39 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/02/21 15:13:58 by rzarate           #+#    #+#             */
+/*   Updated: 2018/02/22 01:53:36 by rzarate          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	digits(int	n)
+static	int		n_digits(int n)
 {
-	size_t i;
+	int	r;
 
-	while (n /= 10)
-		i++;
-	return (i);
-}
-
-char	*ft_itoa(int	n)
-{
-	char	*result;
-	int	length;
-	int	holder;
-
-	length = digits(n);
-	ft_putstr("1");
-	holder = n;
+	r = 0;
 	if (n < 0)
 	{
-		length++;
-		holder = -n;
+		r++;
+		n *= -1;
 	}
-	ft_putstr("2");
-	result = ft_strnew(length);
-	ft_putstr("3");
-	while (holder /= 10)
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		length--;
-		result[length] = (holder % 10) + '0';
+		r++;
+		n /= 10;
 	}
-	ft_putstr(result);
-//	if (n < 0)
-	//	result[0] = '-';
-	return (result);
+	return (r);
+}
+
+char			*ft_itoa(int n)
+{
+	char	*s;
+	int		i;
+	int		len;
+
+	i = 0;
+	len = n_digits(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	s = ft_strnew(len);
+	if (!s)
+		return (NULL);
+	if (n < 0)
+	{
+		n *= -1;
+		i = 1;
+		s[0] = '-';
+	}
+	while (--len >= i)
+	{
+		s[len] = (n % 10) + 48;
+		n /= 10;
+	}
+	return (s);
 }
