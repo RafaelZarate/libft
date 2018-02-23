@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/22 23:56:09 by rzarate           #+#    #+#             */
-/*   Updated: 2018/02/23 00:05:07 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/02/23 00:10:02 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		new = new->next;
 		lst = lst->next;
 	}
+	return (start);
 }
