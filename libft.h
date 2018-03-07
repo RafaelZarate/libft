@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 10:26:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/02/23 00:05:04 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/07 02:36:23 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct		s_list
 }					t_list;
 
 size_t				ft_strlen(const char *s);
+size_t				ft_strlen_wc(wchar_t *s);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strcat(char *restrict s1, const char *restrict s2);
@@ -73,11 +74,16 @@ char				*ft_strtrim(char const *s);
 char				*ft_strtrimc(char const *s, char c);
 int					ft_countwords(char *s, char c);
 char				**ft_strsplit(char const *s, char c);
+int					n_digits(int n);
 char				*ft_itoa(int n);
+char				*uitoa_base(uintmax_t n, unsigned int base);
 void				ft_putnbr(int n);
+void				ft_putnbr_ui(uintmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);
+void				ft_putchar_wc(wchar_t c);
 void				ft_putstr(char const *s);
+void				ft_putstr_wc(wchar_t *s);
 void				ft_putendl(char const *s);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);

@@ -1,60 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putstr_wc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/21 15:13:58 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/06 06:19:25 by rzarate          ###   ########.fr       */
+/*   Created: 2018/03/07 02:31:23 by rzarate           #+#    #+#             */
+/*   Updated: 2018/03/07 02:34:27 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		n_digits(int n)
+void	ft_putstr_wc(wchar_t *s)
 {
-	int	r;
-
-	r = 0;
-	if (n < 0)
-	{
-		r++;
-		n *= -1;
-	}
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		r++;
-		n /= 10;
-	}
-	return (r);
-}
-
-char			*ft_itoa(int n)
-{
-	char	*s;
-	int		i;
-	int		len;
+	int i;
 
 	i = 0;
-	len = n_digits(n);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	s = ft_strnew(len);
 	if (!s)
-		return (NULL);
-	if (n < 0)
+		return ;
+	while (s[i])
 	{
-		n *= -1;
-		i = 1;
-		s[0] = '-';
+		ft_putchar_wc(s[i]);
+		i++;
 	}
-	while (--len >= i)
-	{
-		s[len] = (n % 10) + 48;
-		n /= 10;
-	}
-	return (s);
 }
