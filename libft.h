@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 10:26:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/07 02:36:23 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/10 04:35:16 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,12 @@ char				*ft_strtrimc(char const *s, char c);
 int					ft_countwords(char *s, char c);
 char				**ft_strsplit(char const *s, char c);
 int					n_digits(int n);
+int					n_ldigits(long n);
 char				*ft_itoa(int n);
+char				*ft_litoa(long n);
 char				*uitoa_base(uintmax_t n, unsigned int base);
 void				ft_putnbr(int n);
+void	            ft_putnbr_li(long n);
 void				ft_putnbr_ui(uintmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);
