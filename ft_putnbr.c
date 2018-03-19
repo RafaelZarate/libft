@@ -6,19 +6,14 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 16:53:39 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/10 02:38:50 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/14 20:34:02 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(intmax_t n)
 {
-	if (n == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
 	if (n < 0)
 	{
 		ft_putchar('-');

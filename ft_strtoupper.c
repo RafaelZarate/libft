@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtoupper.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/19 11:16:28 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/18 19:15:38 by rzarate          ###   ########.fr       */
+/*   Created: 2018/03/15 01:45:26 by rzarate           #+#    #+#             */
+/*   Updated: 2018/03/18 20:55:59 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_strtoupper(char **s)
 {
-	size_t i;
+	size_t	i;
+	char	*tmp;
+	char	*str;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
+	str = *s;
+	tmp = ft_strnew(ft_strlen(str));
+	i = -1;
+	while (str[++i])
+	{
+		if (ft_islower(str[i]))
+			tmp[i] = str[i] - 32;
+		else
+			tmp[i] = str[i];
+	}
+	*s = tmp;
 }

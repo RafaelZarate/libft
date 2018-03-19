@@ -6,7 +6,7 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 10:26:57 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/10 04:35:16 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/17 20:46:15 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+void				ft_strtoupper(char **s);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -74,13 +75,11 @@ char				*ft_strtrim(char const *s);
 char				*ft_strtrimc(char const *s, char c);
 int					ft_countwords(char *s, char c);
 char				**ft_strsplit(char const *s, char c);
-int					n_digits(int n);
+int					n_digits(intmax_t n);
 int					n_ldigits(long n);
-char				*ft_itoa(int n);
-char				*ft_litoa(long n);
+char				*ft_itoa(intmax_t n);
 char				*uitoa_base(uintmax_t n, unsigned int base);
-void				ft_putnbr(int n);
-void	            ft_putnbr_li(long n);
+void				ft_putnbr(intmax_t n);
 void				ft_putnbr_ui(uintmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putchar(char c);

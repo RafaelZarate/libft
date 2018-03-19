@@ -6,13 +6,13 @@
 /*   By: rzarate <rzarate@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/21 15:13:58 by rzarate           #+#    #+#             */
-/*   Updated: 2018/03/06 06:19:25 by rzarate          ###   ########.fr       */
+/*   Updated: 2018/03/18 20:53:58 by rzarate          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		n_digits(int n)
+int		n_digits(intmax_t n)
 {
 	int	r;
 
@@ -32,7 +32,7 @@ int		n_digits(int n)
 	return (r);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(intmax_t n)
 {
 	char	*s;
 	int		i;
@@ -40,8 +40,6 @@ char			*ft_itoa(int n)
 
 	i = 0;
 	len = n_digits(n);
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	s = ft_strnew(len);
 	if (!s)
 		return (NULL);
